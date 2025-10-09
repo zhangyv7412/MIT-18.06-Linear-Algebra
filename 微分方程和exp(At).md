@@ -32,9 +32,11 @@ u(0) =
 	\end{bmatrix}
 $$
 
-因矩阵$A$是奇异矩阵,故一个特征值为$0$,又因为迹为$-3$,所以另一个特征值为$-3$.
-将其记为$${\lambda}_1 = 0,{\lambda}_2 = -3$$
-容易求得特征向量分别为
+因矩阵 $A$ 是奇异矩阵,故一个特征值为 $0$ ,又因为迹为 $-3$ ,所以另一个特征值为 $-3$ .  
+将其记为:  
+ $${\lambda}_1 = 0,{\lambda}_2 = -3$$
+容易求得特征向量分别为:  
+
 $$
 x_1 =
 \begin{bmatrix}
@@ -45,25 +47,30 @@ x_1 =
 	1 \\ -1
 	\end{bmatrix}
 $$
-**\*我们知道解的结构应该形如**
+**我们知道解的结构应该形如:**  
 $$\Large u = c_1u_1 + c_2u_2= c_1 e^{\lambda_1 t} x_1 +c_2 e^{\lambda_2 t} x_2$$
-代入特征值和特征向量
+代入特征值和特征向量:  
+
 $$u = c_1 \begin{bmatrix} 2 \\ 1 \end{bmatrix} +c_2 e^{-3 t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}$$
-代入初始条件
+代入初始条件:  
+
 $$
 \begin{equation}
 u(0) = c_1 \begin{bmatrix} 2 \\ 1 \end{bmatrix} +c_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \iff u(0) = \begin{bmatrix} 2 & 1 \\ 1 & -2 \end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \end{equation}
 $$
-容易解得$c_1 = c_2 = \frac{1}{3}$,最终答案为$$u = \frac{1}{3} \begin{bmatrix} 2 \\ 1 \end{bmatrix} + \frac{1}{3}e^{-3t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}$$
+
+容易解得 $c_1 = c_2 = \frac{1}{3}$ ,最终答案为:  
+ $$u = \frac{1}{3} \begin{bmatrix} 2 \\ 1 \end{bmatrix} + \frac{1}{3}e^{-3t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}$$  
 
 ### 一般性的推导
-让我们沿着例子[[微分方程和exp(At)#一阶线性微分方程组]]中的过程,得到更一般的结果.
+让我们沿着例子中的过程,得到更一般的结果.
 下面我们来求解
 $$\large \frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t} = A \boldsymbol{u}$$
-其中,矩阵$A$说明$u$是耦合的,关键在于如何解耦.解耦在此处就是对角化.
-令
+其中,矩阵$A$说明$u$是耦合的,关键在于如何解耦.  
+解耦在此处就是对角化.  
+令  
 $$u = Sv$$
 代入得
 $$S \frac{\mathrm{d}v}{\mathrm{d}t} = ASv$$
@@ -128,7 +135,7 @@ y' \\ y
 \iff
 u' = Au
 $$
-下面的计算就和[[微分方程和exp(At)#一阶线性微分方程组]]中所提到的一样
+下面的计算就和例子中的一样.
 >[!summary] 总结
 >大多数情况下,对高阶/高维形式的问题处理总是想办法将其降阶/降维,然后从简单的情形入手解决问题.
 
@@ -140,12 +147,12 @@ $$
 # 指数矩阵
 ## 定义
 正如定义指数函数是通过幂级数展开的方式,我们在此处也通过**幂级数**来定义指数矩阵.
->$eg1.$指数函数
+> $eg1.$ 指数函数
 >$$e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}$$
 
 仿照$e^x$的幂级数展开,$1$替换为单位阵$I$,$x$替换为$At$,得到如下定义式:
 $$\large e^{At} = I + At + \frac{(At)^2}{2} + \cdots = \sum_{n = 0}^{\infty} \frac{(At)^n}{n!}$$
->$eg2.$几何级数
+> $eg2.$ 几何级数
 >$$\frac{1}{1-x} = \sum_{n = 0}^{\infty} x^n$$
 
 同样的,可以得到:
